@@ -1,0 +1,22 @@
+CREATE TABLE Fact_Sales (
+    Sales_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Order_ID VARCHAR(15),
+    Order_Date DATE,
+    Customer_ID VARCHAR(10),
+    Product_ID VARCHAR(10),
+    Store_ID VARCHAR(10),
+    Employee_ID VARCHAR(10),
+    Quantity INT,
+    Unit_Price DECIMAL(10,2),
+    Discount_Percent DECIMAL(5,2),
+    Tax_Percent DECIMAL(5,2),
+    Sales_Amount DECIMAL(12,2),
+    Profit DECIMAL(12,2),
+    Payment_Mode VARCHAR(30),
+    Order_Status VARCHAR(30),
+    Delivery_Date DATE,
+    FOREIGN KEY (Customer_ID) REFERENCES Customer_Master(Customer_ID),
+    FOREIGN KEY (Product_ID) REFERENCES Product_Master(Product_ID),
+    FOREIGN KEY (Store_ID) REFERENCES Store_Master(Store_ID),
+    FOREIGN KEY (Employee_ID) REFERENCES Employee_Master(Employee_ID)
+);
